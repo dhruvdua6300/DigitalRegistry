@@ -1,0 +1,48 @@
+﻿@model DigitalRegistry.Models.Tags
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tags</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tag_text)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tag_text)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tag_type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tag_type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.social_media_count)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.social_media_count)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile_app_count)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.mobile_app_count)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.gallery_count)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.gallery_count)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

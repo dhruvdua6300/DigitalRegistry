@@ -33,7 +33,10 @@ namespace DigitalRegistry.Controllers
         {
 
             rootObject = GetAllResults();
-            bool areNewRecordsAdded = _repository.SaveResults(rootObject);
+            if (_repository.getCount())
+            {
+                bool areNewRecordsAdded = _repository.SaveResults(rootObject);
+            }
             return View(rootObject);
 
         }

@@ -1,0 +1,51 @@
+﻿@model DigitalRegistry.Models.Tags
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Tags</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="tag_text" class="control-label"></label>
+                <input asp-for="tag_text" class="form-control" />
+                <span asp-validation-for="tag_text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tag_type" class="control-label"></label>
+                <input asp-for="tag_type" class="form-control" />
+                <span asp-validation-for="tag_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="social_media_count" class="control-label"></label>
+                <input asp-for="social_media_count" class="form-control" />
+                <span asp-validation-for="social_media_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobile_app_count" class="control-label"></label>
+                <input asp-for="mobile_app_count" class="form-control" />
+                <span asp-validation-for="mobile_app_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gallery_count" class="control-label"></label>
+                <input asp-for="gallery_count" class="form-control" />
+                <span asp-validation-for="gallery_count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

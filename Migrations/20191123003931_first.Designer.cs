@@ -4,14 +4,16 @@ using DigitalRegistry.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DigitalRegistry.Migrations
 {
     [DbContext(typeof(DigitalRegistryContext))]
-    partial class DigitalRegistryContextModelSnapshot : ModelSnapshot
+    [Migration("20191123003931_first")]
+    partial class first
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,7 +92,7 @@ namespace DigitalRegistry.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("created_at");
+                    b.Property<DateTime>("created_at");
 
                     b.Property<string>("icon_url");
 
@@ -102,7 +104,7 @@ namespace DigitalRegistry.Migrations
 
                     b.Property<string>("short_description");
 
-                    b.Property<DateTime?>("updated_at");
+                    b.Property<DateTime>("updated_at");
 
                     b.HasKey("id");
 
@@ -188,27 +190,6 @@ namespace DigitalRegistry.Migrations
                     b.ToTable("Tag");
                 });
 
-            modelBuilder.Entity("DigitalRegistry.Models.Tags", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("gallery_count");
-
-                    b.Property<int>("mobile_app_count");
-
-                    b.Property<int>("social_media_count");
-
-                    b.Property<string>("tag_text");
-
-                    b.Property<string>("tag_type");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Tags");
-                });
-
             modelBuilder.Entity("DigitalRegistry.Models.Version", b =>
                 {
                     b.Property<int>("id")
@@ -221,11 +202,11 @@ namespace DigitalRegistry.Migrations
 
                     b.Property<string>("device");
 
-                    b.Property<int?>("number_of_ratings");
+                    b.Property<int>("number_of_ratings");
 
                     b.Property<string>("platform");
 
-                    b.Property<DateTime?>("publish_date");
+                    b.Property<DateTime>("publish_date");
 
                     b.Property<string>("screenshot");
 

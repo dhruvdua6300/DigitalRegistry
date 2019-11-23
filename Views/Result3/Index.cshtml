@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DigitalRegistry.Models.Result3>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.organization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.service_key)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.short_description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.long_description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.service_display_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.service_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.created_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updated_at)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.organization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_key)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.short_description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.long_description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_display_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.service_url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.created_at)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updated_at)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

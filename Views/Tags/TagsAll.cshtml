@@ -1,0 +1,134 @@
+﻿
+
+@{
+    ViewData["Title"] = "Accounts";
+}
+
+@model DigitalRegistry.Models.TagsRoot
+
+@{
+    Layout = "_Layout";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            table th {
+                background-color: #B8DBFD;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            table, table table td {
+                border: 0px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h4>List of All Companies</h4>
+        <hr />
+        <br />
+        @using (Html.BeginForm("Companies", "Home", FormMethod.Post))
+        {
+            <b>Search By:</b>
+            @Html.RadioButton("searchBy", "Symbol", true) <text>Symbol</text>
+            @Html.RadioButton("searchBy", "Name") <text>CompanyName</text><br />
+            @Html.TextBox("search") <input type="submit" class="btn btn-primary" value="Search" />
+        }
+    </div>
+    <p>* when searching by symbol please provide exact symbol of the company</p>
+    <br />
+
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>Tag Type</th>
+            <th>Tag Text</th>
+            <th>Mobile App Count</th>
+            <th>Social Media Account</th>
+
+        </tr>
+
+        @foreach (Tags result in Model.results)
+        {
+            <tr>
+                <td>@result.id</td>
+                <td>@result.tag_type</td>
+                <td>@result.tag_text</td>
+                <td>@result.mobile_app_count</td>
+                <td>@result.social_media_count</td>
+            </tr>
+        }
+
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
+
+         var PieChartData =
+            {
+                labels: [@Html.Raw(ViewBag.Productname_List)],
+                datasets: [{
+                    label: 'ProductWise Sales Count',
+                    backgroundColor: [
+                        "#f990a7",
+                        "#aad2ed",
+                        "#9966FF",
+                        "#99e5e5",
+                        "#f7bd83",
+                    ],
+                    borderWidth: 2,
+                    data: [@ViewBag.MobileCount_List]
+                }]
+            };
+
+            window.onload = function () {
+                var ctx1 = document.getElementById("Piecanvas").getContext("2d");
+                window.myBar = new Chart(ctx1,
+                    {
+                        type: 'pie',
+                        data: PieChartData,
+                        options:
+                            {
+                                title:
+                                {
+                                    display: true,
+                                    text: "ProductWise Sales Count"
+                                },
+                                responsive: true,
+                                maintainAspectRatio: true
+                            }
+                    });
+            }
+
+
+
+    </script>
+    <canvas id="pie-chart" width="800" height="450"></canvas>
+    <br />
+    </div>
+</body>
+</html>
+
+

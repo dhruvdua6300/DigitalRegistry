@@ -35,7 +35,8 @@ namespace DigitalRegistry
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddTransient<IRepository, Repository>();
+           // services.AddTransient<IRepository, Repository>();
+            services.AddScoped<IRepository, Repository>();
 
             services.AddDbContext<DigitalRegistryContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DigitalRegistryContext")));
