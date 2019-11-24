@@ -40,10 +40,18 @@ namespace DigitalRegistry.Controllers
             {
                 bool areNewRecordsAdded = _repository.saveTags(rootObject);
             }
+            
+
+
+
             return View(rootObject);
 
         }
 
+        public IActionResult aboutUs() {
+            return View();
+
+        }
 
         public TagsRoot GetAllTags()
         {

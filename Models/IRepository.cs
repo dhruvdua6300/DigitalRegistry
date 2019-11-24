@@ -21,5 +21,7 @@ namespace DigitalRegistry.Models
         bool getTagsData();
 
         bool saveTags(TagsRoot tagsRoot);
+
+        
     }
 }

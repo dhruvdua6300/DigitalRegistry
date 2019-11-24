@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "aboutUs";
+}
+
+
+<head>
+    <style>
+
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial;
+        }
+        /* Center website */
+        .main {
+            width: 100%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
+
+        .row {
+            margin: 8px -16px;
+        }
+            /* Add padding BETWEEN each column */
+            .row,
+            .row > .column {
+                padding: 10px;
+            }
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 30%;
+        }
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- MAIN (Center website) -->
+    <div class="main">
+
+        <h1>About Project</h1>
+        <p>We have built a digital registry of all the organizations with there social media page and mobile applications</p>
+        <hr>
+
+        <h2>PORTFOLIO</h2>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column">
+                <div class="content">
+                    <img src="~/images/pro_pic_1.jpg" alt="Mountains" style="width:100%">
+                    <h3>Xinyu</h3>
+                    <p>Worked on database models and also contributed towards making website responsive by adding the required tags.</p>
+                    <a href="https://github.com/jxy35010">Git</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <img src="~/images/pro_pic_2.jpg" alt="Lights" style="width:100%">
+                    <h3>Dhruv Dua</h3>
+                    <p>Worked on table design and image transition animations and layouts in website </p>
+                    <a href="https://github.com/dhruvdua6300">Git</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <img src="~/images/pro_pic_3.jpg" alt="Nature" style="width:100%">
+                    <h3>Shreyas</h3>
+                    <p>Wroked on responsive layout design , color schemes and javascript for fade in animations</p>
+                    <a href="https://github.com/shreyashn07">Git</a>
+                </div>
+            </div>
+
+            <!-- END GRID -->
+        </div>
+        
+
+
+        <!-- END MAIN -->
+    </div>
+
+</body>

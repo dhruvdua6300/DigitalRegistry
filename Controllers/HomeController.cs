@@ -66,7 +66,7 @@ namespace DigitalRegistry.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction(nameof(results));
+            return View();
         }
 
         public IActionResult About()

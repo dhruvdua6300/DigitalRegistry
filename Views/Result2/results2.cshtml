@@ -45,20 +45,7 @@
     </style>
 </head>
 <body>
-    <div>
-        <h4>List Of All Mobile Applications</h4>
-        <hr />
-        <br />
-        @using (Html.BeginForm("Companies", "Home", FormMethod.Post))
-        {
-            <b>Search By:</b>
-            @Html.RadioButton("searchBy", "Symbol", true) <text>Symbol</text>
-            @Html.RadioButton("searchBy", "Name") <text>CompanyName</text><br />
-            @Html.TextBox("search") <input type="submit" class="btn btn-primary" value="Search" />
-        }
-    </div>
-    <p>* when searching by symbol please provide exact symbol of the company</p>
-    <br />
+    
 
   
 

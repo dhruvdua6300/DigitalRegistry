@@ -41,25 +41,19 @@
             table, table table td {
                 border: 0px solid #ccc;
             }
+
+            .responsive {
+                width: 100%;
+                height: auto;
+            }
     </style>
 </head>
 <body>
-    <div>
-        <h4>List of All Companies</h4>
-        <hr />
-        <br />
-        @using (Html.BeginForm("Companies", "Home", FormMethod.Post))
-        {
-            <b>Search By:</b>
-            @Html.RadioButton("searchBy", "Symbol", true) <text>Symbol</text>
-            @Html.RadioButton("searchBy", "Name") <text>CompanyName</text><br />
-            @Html.TextBox("search") <input type="submit" class="btn btn-primary" value="Search" />
-        }
-    </div>
-    <p>* when searching by symbol please provide exact symbol of the company</p>
-    <br />
+    
+    <h1>All Organizations</h1>
+    <br>
 
-    <table cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" style="text-align:center;" align="center">
         <tr>
             <th>Id</th>
             <th>OrganizationName</th>
